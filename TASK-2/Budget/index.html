@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Budget Page</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">    
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
+		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">  
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Budget</title>
+
+</head>
+
+<body>
+
+
+<div class="container-fluid">
+
+    
+	
+    
+    <div class="mx-auto">
+        <div class="card  rounded border-white product">
+            <div class="card-header" id="usernameSpan">
+                <h3 id="h3header"> Budget Page </h3>
+                <button class="btn btn-outline-success btn-sm m-3 addNewProduct pull-right" id="addNewProduct"
+                        data-toggle="modal" data-target="#addNewProductModal" >Add Budget
+                </button>
+            </div>
+            <div class="card-body text-dark" id="productDashboard">
+                <h4 class="card-title"> Budget Page </h4>
+                <td>
+                    <div style="overflow-x:auto;">
+                    <table class="list" id="employeeList">
+                        <thead>
+                            <tr>
+                                <th>Budget no.</th>
+                    <th>Budget Title</th>
+                    <th>Budget Type</th>
+                    <th>Start date</th>
+                    <th>end date</th>
+                    <th>Total Revenue</th>
+                    <th>Total Expanse</th>
+                    <th>Tax Amount</th>
+                    <th>Budget Amount</th>
+                    
+                            </tr>
+                        </thead>
+                        <tbody>
+                
+                        </tbody>
+                    </table>
+                </div>
+                </td>
+
+                <ul class="list-group" id="productDisplay">
+					
+                </ul>
+            </div>
+        </div>
+    </div>
+   
+	
+    
+    <div class="modal fade" id="addNewProductModal" tabindex="-1" role="dialog"
+         aria-labelledby="addNewProductModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                
+                <div class="modal-body">
+                    <form class="form-horizontal" role="form" id="modalForm">              
+                        <div class="form-group">
+                         
+                        </div>
+                        
+                    
+                        <button type="button"  style="float: right;" class="btn btn-outline-danger btn-sm m-2" data-dismiss="modal"
+                                            id="modalClose"onclick="productFormReset()"><i class="fa fa-close"></i> Close
+                                    </button>
+                                    
+                    <h3>Add Salary</h3>
+                               
+                        <div class="form-group">
+                            <label for="EmployeeDescription"> Budget no.</label>
+                            <textarea id="EmployeeDescription" maxlength="50"  rows="2"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="EmployeeDescription"> Budget Title </label>
+                            <textarea id="EmployeeDescription" maxlength="50"  rows="2"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="EmployeeDescription"> Budget Type </label>
+                            <textarea id="EmployeeDescription" maxlength="50"  rows="2"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="EmployeeDescription">Start date</label>
+                            <input type="date" name="" placeholder="Start date">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="EmployeeDescription">End date</label>
+                            <input type="date" name="" placeholder="Start date">
+                        </div>
+                        <div class="form-group">
+                            <label for="EmployeeDescription">Total Revenue</label>
+                            <textarea id="EmployeeDescription" maxlength="50"  rows="2"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="EmployeeDescription">Total Expanse</label>
+                            <textarea id="EmployeeDescription" maxlength="50"  rows="2"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="EmployeeDescription">Tax Amount</label>
+                            <textarea id="EmployeeDescription" maxlength="50"  rows="2"></textarea>
+                        </div>
+                        
+                        
+                        <div class="form-group">
+                            <label for="EmployeeDescription">Budget Amount</label>
+                            <textarea id="EmployeeDescription" maxlength="50"  rows="2"></textarea>
+                        </div>
+                        
+                        
+                       
+                           
+                                 
+                            <button type="button" style="float: middle;" class="btn btn-outline-success btn-sm m-2" id="modalSubmit"><i
+                                    class="fa fa-save"></i> Add  Budget
+                            </button>
+
+                            
+                        </div>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+        crossorigin="anonymous"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+        integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>		
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" 
+		integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" 
+		crossorigin="anonymous"></script>		
+
+
+
+
+</body>
+
+</html>
